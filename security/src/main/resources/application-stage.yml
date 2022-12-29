@@ -1,0 +1,5 @@
+authorization.server.url: http://weather-security-stage:9000
+gateway.server.url: http://weather-gateway-stage:8080
+weatherapi.server:
+  host: weather-api-stage
+  port: 9090
