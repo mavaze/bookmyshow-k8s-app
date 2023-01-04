@@ -8,6 +8,8 @@
     <artifactId>commons-lib</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <name>- commons</name>
+
     <parent>
         <groupId>io.github.mavaze</groupId>
         <artifactId>bookmyshow-app</artifactId>
@@ -16,7 +18,8 @@
 
     <properties>
         <sonar.skip>true</sonar.skip>
-        <oauth2-resource-server.version>5.7.3</oauth2-resource-server.version>
+        <springdoc.version>2.0.2</springdoc.version>
+        <oauth2-resource-server.version>6.0.1</oauth2-resource-server.version>
     </properties>
 
     <dependencies>
@@ -26,10 +29,16 @@
             <version>3.2.6</version>
             <type>pom</type>
         </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>3.0.0-M8</version>
+        </dependency>
         <!-- Springdoc OpenAPI dependency -->
         <dependency>
             <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-webmvc-core</artifactId>
+            <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+            <version>${springdoc.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,6 +59,19 @@
             <artifactId>spring-security-oauth2-jose</artifactId>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- OpenAPI 3 -->
+            <!-- <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi</artifactId>
+                <version>${springdoc.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency> -->
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

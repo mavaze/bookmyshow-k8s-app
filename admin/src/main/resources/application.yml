@@ -1,0 +1,25 @@
+server.port: 8080
+
+spring:
+  application.name: admin
+  cloud.kubernetes:
+    discovery:
+      namespaces:
+      - default
+      catalog-services-watch-delay: 30000  # milliseconds
+
+springdoc:
+  packages-to-scan:
+  - io.github.mavaze.bookmyshow
+  api-docs:
+    # path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    # path: /restdocs.html
+    use-root-path: true
+    oauth:
+      client-id: admin
+      client-secret: secret # ignored if pkce is enabled
+      app-name: admin
+      # use-pkce-with-authorization-code-grant: true
+    oauth2-redirect-url: http://admin:8080/webjars/swagger-ui/oauth2-redirect.html
